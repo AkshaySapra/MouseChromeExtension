@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "mouse",
+  "version": "1.0",
+    "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "description": "Middle Click Extension Replaces the 'open link in new tab' with a link that opens in the other existing window",
+  "permissions": [
+  "activeTab",
+  "contextMenus",
+  "tabs",
+  "runtime"
+  ],
+    "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["content.js"]
+  }]
+
+}
